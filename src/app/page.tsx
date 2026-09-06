@@ -1,69 +1,107 @@
 import Image from "next/image";
+import Link from "next/link";
+
+function Photo({
+  src,
+  alt,
+  sizes,
+  preload = false,
+  className = "",
+}: {
+  src: string;
+  alt: string;
+  sizes: string;
+  preload?: boolean;
+  className?: string;
+}) {
+  return (
+    <figure className={`photo ${className}`}>
+      <div className="photo-space">
+        <Image src={src} alt={alt} fill sizes={sizes} preload={preload} className="photo-image" />
+      </div>
+    </figure>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="publication">
+      <a className="skip-link" href="#main">Skip to content</a>
+      <header className="site-header">
+        <Link className="wordmark" href="/" aria-label="Elliot Preston home">Elliot Preston</Link>
+        <nav aria-label="Main navigation">
+          <Link href="/" aria-current="page">Home</Link>
+          <Link href="/work">Work</Link>
+          <Link href="/music">Music</Link>
+          <a className="resume-link" href="#resume">Resume <span aria-hidden="true">↗</span></a>
+        </nav>
+      </header>
+
+      <main id="main">
+        <section className="hero" aria-labelledby="hero-title">
+          <div className="hero-heading">
+            <h1 id="hero-title">Elliot Preston<span className="title-period">.</span></h1>
+          </div>
+          <Photo className="hero-photo" src="/E_hero.jpg" alt="Elliot Preston beneath warm marquee lights at night." sizes="(max-width: 440px) calc(100vw - 44px), (max-width: 1600px) 90vw, 1440px" preload />
+        </section>
+
+        <section className="editorial-section work-section" aria-labelledby="work-title">
+          <div className="section-heading">
+            <h2 id="work-title">Work</h2>
+          </div>
+          <div className="section-copy">
+            <h3 className="section-lead work-heading">
+              <span>Technical Leader ·</span>{" "}
+              <span>Software Quality ·</span>{" "}
+              <span>Mobile</span>
+            </h3>
+            <p className="body-copy">My career progressed from customer-facing work to QA engineering and, most recently, technical leadership.</p>
+            <p className="body-copy">Most recently, I led the technical direction of a team supporting 4,000+ white-label mobile apps across iOS and Android. I helped set priorities, guide releases, solve difficult production issues, modernize the platform, and keep work moving across engineering, product, and customer-facing teams.</p>
+            <Link className="section-link primary-link" href="/work">Explore my work <span aria-hidden="true">↗</span></Link>
+          </div>
+        </section>
+
+        <section className="editorial-section music-section" aria-labelledby="music-title">
+          <div className="section-heading">
+            <h2 id="music-title">Music</h2>
+            <Photo className="music-photo" src="/music.jpg" alt="Elliot Preston playing electric guitar beside a microphone under colorful stage lights." sizes="(max-width: 440px) calc(88vw - 39px), (max-width: 700px) 79.2vw, (max-width: 1600px) 46vw, 736px" />
+          </div>
+          <div className="section-copy">
+            <p className="body-copy">Music has always been a huge part of my life. I play in two bands, Peyote Ugly and Blade Palace. I play guitar and drums, and I’m often writing, recording, mixing, or working on a new idea.</p>
+            <Link className="section-link" href="/music">Explore my music <span aria-hidden="true">↗</span></Link>
+          </div>
+        </section>
+
+        <section className="closing" aria-label="Closing photograph">
+          <Photo className="closing-photo" src="/nature.jpg" alt="Sunlight filtering through evergreen branches over a lake surrounded by forested mountains." sizes="(max-width: 440px) calc(94vw - 41px), (max-width: 700px) 84.6vw, (max-width: 1600px) 70.2vw, 1123px" />
+        </section>
       </main>
+
+      <footer className="site-footer">
+        <div className="footer-intro">
+          <p className="footer-name">Elliot Preston</p>
+          <p className="eyebrow">Work & music</p>
+        </div>
+        <div className="footer-group">
+          <h2>Contact</h2>
+          <p>Email forthcoming</p>
+        </div>
+        <div className="footer-group">
+          <h2>Professional</h2>
+          <Link href="/work">Work <span aria-hidden="true">↗</span></Link>
+          <p id="resume">Resume forthcoming</p>
+          <p>Profile link forthcoming</p>
+        </div>
+        <div className="footer-group">
+          <h2>Music</h2>
+          <Link href="/music">Music <span aria-hidden="true">↗</span></Link>
+          <p>Listening links forthcoming</p>
+        </div>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Elliot Preston</span>
+          <a href="#main">Back to top <span aria-hidden="true">↑</span></a>
+        </div>
+      </footer>
     </div>
   );
 }
