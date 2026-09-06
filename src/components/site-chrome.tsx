@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-export function SiteHeader({ currentPage, resumeHref = "#resume" }: { currentPage: "home" | "work"; resumeHref?: string }) {
+export function SiteHeader({ currentPage, resumeHref = "#resume" }: { currentPage: "home" | "work" | "music"; resumeHref?: string }) {
   return (
       <header className="site-header">
         <Link className="wordmark" href="/" aria-label="Elliot Preston home">Elliot Preston</Link>
         <nav aria-label="Main navigation">
           <Link href="/" aria-current={currentPage === "home" ? "page" : undefined}>Home</Link>
           <Link href="/work" aria-current={currentPage === "work" ? "page" : undefined}>Work</Link>
-          <Link href="/music">Music</Link>
+          <Link href="/music" aria-current={currentPage === "music" ? "page" : undefined}>Music</Link>
           <a className="resume-link" href={resumeHref}>Resume <span aria-hidden="true">↗</span></a>
         </nav>
       </header>
@@ -28,6 +28,7 @@ export function SiteFooter() {
           <h2>Professional</h2>
           <p><a id="resume" href="/Elliot_Preston_Resume.pdf">Resume</a></p>
           <p><a href="https://www.linkedin.com/in/elliot-preston-61014b12a/">LinkedIn</a></p>
+          <p><a href="https://github.com/elliot-preston/">GitHub</a></p>
         </div>
         <div className="footer-group footer-explore">
           <h2>Explore</h2>
