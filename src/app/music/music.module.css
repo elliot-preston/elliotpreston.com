@@ -1,26 +1,5 @@
-.hero {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  align-items: flex-end;
-  aspect-ratio: 2.1;
-  min-height: 320px;
-  margin-top: 22px;
-  padding: clamp(28px, 3.5vw, 56px);
-  background: var(--photo);
-  overflow: hidden;
-}
-
-.hero img { object-position: 30% 5%; filter: brightness(0.65); }
-.hero h1 {
-  position: relative;
-  margin: 0;
-  color: #f5f2eb;
-  font-size: clamp(52px, 8.5vw, 118px);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.065em;
-}
+/* Share Home hero styling while retaining the Music photo’s focal point. */
+:global(.publication.music-page) .hero :global(.hero-photo .photo-image) { object-position: 30% 3.5%; }
 
 .section {
   display: grid;
@@ -32,12 +11,9 @@
   border-top: 1px solid var(--rule);
 }
 
-.intro { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); border-top: 0; }
-.statement { margin: 0; max-width: 23ch; }
 .photo { position: relative; overflow: hidden; aspect-ratio: 1.35; background: var(--photo); }
 .photo img { filter: brightness(0.65); }
-.introPhoto { width: 88%; justify-self: end; aspect-ratio: 0.95; }
-.introPhoto img { object-position: 50% 30%; }
+.peyotePhoto img { object-position: 50% 15%; }
 .bladePhoto img { transform: translateY(-2%) scale(1.04); }
 .recordingPhoto { aspect-ratio: 1.65; }
 .recordingPhoto img { object-position: 50% 100%; }
@@ -54,12 +30,14 @@
 .reverse .photo { grid-column: 2; grid-row: 1; }
 .reverse .copy { grid-column: 1; grid-row: 1; }
 
+@media (min-width: 1024px) {
+  .hero { width: 94%; margin-inline: auto; }
+
+}
+
 @media (max-width: 700px) {
-  .hero { aspect-ratio: auto; min-height: 360px; padding: 28px 22px; }
-  .hero img { object-position: 10% 5%; }
+  :global(.publication.music-page) .hero :global(.hero-photo .photo-image) { object-position: 10% 3.5%; }
   .section { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-inline: 0; padding-block: 32px 40px; }
-  .statement { max-width: 460px; }
-  .introPhoto { width: 78%; aspect-ratio: 1.1; }
   .reverse .photo, .reverse .copy { grid-column: auto; grid-row: auto; }
   .copy h2 { margin-bottom: 20px; }
 }
