@@ -33,7 +33,7 @@ export default function Home() {
       <main id="main">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-heading">
-            <h1 id="hero-title">Elliot Preston<span className="title-period">.</span></h1>
+            <h1 id="hero-title">Elliot <span className="hero-surname">Preston<span className="title-period">.</span></span></h1>
           </div>
           <Photo className="hero-photo" src="/E_hero.jpg" alt="Elliot Preston beneath warm marquee lights at night." sizes="(max-width: 440px) calc(100vw - 44px), (max-width: 1600px) 90vw, 1440px" preload />
         </section>
@@ -62,7 +62,7 @@ export default function Home() {
           </div>
           <div className="section-copy">
             <h3 className="section-lead work-heading music-heading"><span>Musician ·</span>{" "}<span>Sound Engineer</span></h3>
-            <p className="body-copy">Music has always been a huge part of my life. I play guitar and drums, and perform in two bands - Peyote Ugly and Blade Palace. I'm often writing, recording, mixing, or working on a new idea.</p>
+            <p className="body-copy">Music has always been a huge part of my life. I play guitar and drums, and perform in two bands - Peyote Ugly and Blade Palace. I&apos;m often writing, recording, mixing, or working on a new idea.</p>
             <Link className="section-link primary-link" href="/music">Explore my music <span aria-hidden="true">↗</span></Link>
           </div>
         </section>

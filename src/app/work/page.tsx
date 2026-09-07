@@ -26,7 +26,7 @@ export default function Work() {
   return (
     <div className="publication work-page">
       <a className="skip-link" href="#main">Skip to content</a>
-      <SiteHeader currentPage="work" resumeHref="#work-resume" />
+      <SiteHeader currentPage="work" />
       <main id="main">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-heading">
