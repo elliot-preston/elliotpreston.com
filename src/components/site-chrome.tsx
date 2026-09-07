@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export function SiteHeader({ currentPage, resumeHref = "#resume" }: { currentPage: "home" | "work" | "music"; resumeHref?: string }) {
+export function SiteHeader({ currentPage }: { currentPage: "home" | "work" | "music" }) {
   return (
       <header className="site-header">
         <Link className="wordmark" href="/" aria-label="Elliot Preston home">Elliot Preston</Link>
@@ -8,7 +8,7 @@ export function SiteHeader({ currentPage, resumeHref = "#resume" }: { currentPag
           <Link href="/" aria-current={currentPage === "home" ? "page" : undefined}>Home</Link>
           <Link href="/work" aria-current={currentPage === "work" ? "page" : undefined}>Work</Link>
           <Link href="/music" aria-current={currentPage === "music" ? "page" : undefined}>Music</Link>
-          <a className="resume-link" href={resumeHref}>Resume <span aria-hidden="true">↗</span></a>
+          <a className="resume-link" href="/Elliot_Preston_Resume.pdf">Resume <span aria-hidden="true">↗</span></a>
         </nav>
       </header>
   );
