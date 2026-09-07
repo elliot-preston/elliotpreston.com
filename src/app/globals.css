@@ -216,6 +216,25 @@ h2 { font-weight: 400; }
 .resume-document-icon::before { content: ""; position: absolute; top: -1.5px; right: -1.5px; width: 10px; height: 10px; background: var(--resume-fill); border-left: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; }
 .resume-document-icon::after { content: ""; position: absolute; left: 5px; right: 5px; top: 16px; height: 6px; border-block: 1px solid currentColor; }
 
+/* Restrain the desktop composition while preserving the surrounding chrome. */
+@media (min-width: 1280px) {
+  .publication.home-page .hero-photo .photo-space, .publication.music-page .hero-photo .photo-space { aspect-ratio: 2.85; }
+  .publication.home-page .hero h1, .publication.music-page .hero h1 { font-size: clamp(46.8px, 7.65vw, 106.2px); }
+  /* Keep the original headroom as the narrower, shorter frame scales down. */
+  .publication.home-page .hero-photo .photo-image { object-position: 50% 19%; }
+}
+
+@media (min-width: 1024px) {
+  .home-page main { width: 94%; margin-inline: auto; }
+  .home-page .work-section { padding-block: 45px 78px; }
+  .home-page .music-section { padding-block: 33px 39px; }
+  .home-page .section-heading h2 { font-size: clamp(40.04px, 4.55vw, 61.88px); }
+  .home-page .work-section .work-heading { font-size: 32.76px; }
+  .home-page .music-section .music-heading { font-size: clamp(25.48px, 2.73vw, 36.4px); }
+  .home-page .music-photo { width: 85%; margin-top: 29px; }
+  .home-page .section-copy { max-width: 460px; }
+}
+
 @media (max-width: 1100px) {
   .site-footer { grid-template-columns: 1fr 1fr; }
 }
@@ -251,6 +270,8 @@ h2 { font-weight: 400; }
   .music-photo { width: 88%; margin: 28px 0 0; }
   .music-photo .photo-space { aspect-ratio: 0.95; }
   .music-section .section-copy { margin-left: 6%; }
+  .home-page .music-section .section-copy { margin-left: 0; }
+  .home-page .music-section { gap: 28px; }
   .closing { width: 94%; padding-block: 56px 44px; }
   .closing-photo .photo-space { aspect-ratio: 1.5; min-height: 0; }
   .site-footer { grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -258,6 +279,9 @@ h2 { font-weight: 400; }
 }
 
 @media (max-width: 540px) {
+  .home-page .section-heading h2 { font-size: 40.48px; }
+  .home-page .work-section .work-heading { font-size: 32.4px; }
+  .home-page .music-section .music-heading { font-size: 25.76px; }
   .site-footer { grid-template-columns: 1fr; }
   .work-page .work-resume-section { grid-template-columns: 1fr; }
   .career-timeline li { display: block; }

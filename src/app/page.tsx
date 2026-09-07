@@ -26,7 +26,7 @@ function Photo({
 
 export default function Home() {
   return (
-    <div className="publication">
+    <div className="publication home-page">
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader currentPage="home" />
 

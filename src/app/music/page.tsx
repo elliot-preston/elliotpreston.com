@@ -27,22 +27,23 @@ function BandLinks({ listen, watch }: { listen: string; watch: string }) {
 
 export default function Music() {
   return (
-    <div className="publication">
+    <div className="publication music-page">
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader currentPage="music" />
       <main id="main">
-        <section className={styles.hero} aria-labelledby="hero-title">
-          <Image src="/music_hero.JPG" alt="Elliot Preston singing and playing guitar under red and blue stage lights." fill sizes="(max-width: 440px) calc(100vw - 44px), (max-width: 1600px) 90vw, 1440px" preload className="photo-image" />
-          <h1 id="hero-title">Music</h1>
+        <section className={`hero ${styles.hero}`} aria-labelledby="hero-title">
+          <div className="hero-heading">
+            <h1 id="hero-title">Music</h1>
+          </div>
+          <figure className="photo hero-photo">
+            <div className="photo-space">
+              <Image src="/music_peyoteugly.JPG" alt="Elliot Preston playing guitar with Peyote Ugly under pink stage lights." fill sizes="(max-width: 440px) calc(100vw - 44px), (max-width: 1600px) 90vw, 1440px" preload className="photo-image" />
+            </div>
+          </figure>
         </section>
 
-        <div className={`${styles.section} ${styles.intro}`}>
-          <p className={`section-lead ${styles.statement}`}>Lifelong musician. Guitar and drums at heart, but just as happy to find myself on bass, keys, or working on a mix.</p>
-          <MusicPhoto src="/music_intro.JPG" alt="Elliot Preston playing guitar in warm orange stage light." className={styles.introPhoto} />
-        </div>
-
         <section className={styles.section} aria-labelledby="peyote-title">
-          <MusicPhoto src="/music_peyoteugly.JPG" alt="Elliot Preston playing guitar with Peyote Ugly under pink stage lights." />
+          <MusicPhoto src="/music_intro.JPG" alt="Elliot Preston playing guitar in warm orange stage light." className={styles.peyotePhoto} />
           <div className={styles.copy}>
             <h2 id="peyote-title">Peyote Ugly</h2>
             <p className="body-copy">I’ve been playing guitar and singing in Peyote Ugly since the band formed in 2015. We’ve spent the last decade writing, recording, and releasing music, while touring and playing shows around the Pacific Northwest, including supporting bands like Temples, Frankie and the Witch Fingers, and The Shivas.</p>
