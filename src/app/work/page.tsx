@@ -4,7 +4,7 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 
 export const metadata: Metadata = {
   title: "Work — Elliot Preston",
-  description: "Technical leadership, software quality, and product delivery.",
+  description: "Technical leadership, software quality, engineering, mobile application delivery, production investigation, and the resume and career history of Elliot Preston.",
 };
 
 const career = [

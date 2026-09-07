@@ -5,7 +5,7 @@ import styles from "./music.module.css";
 
 export const metadata: Metadata = {
   title: "Music — Elliot Preston",
-  description: "Lifelong musician. Guitar and drums at heart, but just as happy to find myself on bass, keys, or working on a mix.",
+  description: "Music, bands, recording, mixing, and production from Elliot Preston.",
 };
 
 function MusicPhoto({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
