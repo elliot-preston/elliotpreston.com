@@ -41,7 +41,7 @@ export default function Home() {
         <section className="editorial-section work-section" aria-labelledby="work-title">
           <div className="section-heading">
             <h2 id="work-title">Work</h2>
-            <Photo className="music-photo work-photo" src="/nature.jpg" alt="Sunlight filtering through evergreen branches over a lake surrounded by forested mountains." sizes="(max-width: 440px) calc(88vw - 39px), (max-width: 700px) 79.2vw, (max-width: 1600px) 46vw, 736px" />
+            <Photo className="music-photo work-photo" src="/nature.jpg" alt="Sunlight filtering through evergreen branches over a lake surrounded by forested mountains." sizes="(max-width: 440px) calc(88vw - 39px), (max-width: 900px) 79.2vw, (max-width: 1600px) 46vw, 736px" />
           </div>
           <div className="section-copy">
             <h3 className="section-lead work-heading">
@@ -51,19 +51,19 @@ export default function Home() {
             </h3>
             <p className="body-copy">My career progressed from customer-facing work to QA engineering and, most recently, technical leadership.</p>
             <p className="body-copy">Most recently, I led the technical direction of a team supporting 4,000+ white-label mobile apps across iOS and Android. I helped set priorities, guide releases, solve difficult production issues, modernize the platform, and keep work moving across engineering, product, and customer-facing teams.</p>
-            <Link className="section-link primary-link" href="/work">Explore my work <span aria-hidden="true">↗</span></Link>
+            <Link className="section-link primary-link" href="/work">Explore my work <span aria-hidden="true">→</span></Link>
           </div>
         </section>
 
         <section className="editorial-section music-section" aria-labelledby="music-title">
           <div className="section-heading">
             <h2 id="music-title">Music</h2>
-            <Photo className="music-photo" src="/music.jpg" alt="Elliot Preston playing electric guitar beside a microphone under colorful stage lights." sizes="(max-width: 440px) calc(88vw - 39px), (max-width: 700px) 79.2vw, (max-width: 1600px) 46vw, 736px" />
+            <Photo className="music-photo" src="/music.jpg" alt="Elliot Preston playing electric guitar beside a microphone under colorful stage lights." sizes="(max-width: 440px) calc(88vw - 39px), (max-width: 900px) 79.2vw, (max-width: 1600px) 46vw, 736px" />
           </div>
           <div className="section-copy">
             <h3 className="section-lead work-heading music-heading"><span>Musician ·</span>{" "}<span>Sound Engineer</span></h3>
             <p className="body-copy">Music has always been a huge part of my life. I play guitar and drums, and perform in two bands - Peyote Ugly and Blade Palace. I&apos;m often writing, recording, mixing, or working on a new idea.</p>
-            <Link className="section-link primary-link" href="/music">Explore my music <span aria-hidden="true">↗</span></Link>
+            <Link className="section-link primary-link" href="/music">Explore my music <span aria-hidden="true">→</span></Link>
           </div>
         </section>
 

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function SiteHeader({ currentPage }: { currentPage: "home" | "work" | "music" }) {
   return (
-      <header className="site-header">
+      <header id="top" className="site-header" tabIndex={-1}>
         <Link className="wordmark" href="/" aria-label="Elliot Preston home">Elliot Preston</Link>
         <nav aria-label="Main navigation">
           <Link href="/" aria-current={currentPage === "home" ? "page" : undefined}>Home</Link>
@@ -26,9 +26,9 @@ export function SiteFooter() {
         </div>
         <div className="footer-group">
           <h2>Professional</h2>
-          <p><a id="resume" href="/Elliot_Preston_Resume.pdf">Resume</a></p>
-          <p><a href="https://www.linkedin.com/in/elliot-preston-61014b12a/">LinkedIn</a></p>
-          <p><a href="https://github.com/elliot-preston/">GitHub</a></p>
+          <p><a id="resume" href="/Elliot_Preston_Resume.pdf">Resume <span aria-hidden="true">↗</span></a></p>
+          <p><a href="https://www.linkedin.com/in/elliot-preston-61014b12a/">LinkedIn <span aria-hidden="true">↗</span></a></p>
+          <p><a href="https://github.com/elliot-preston/">GitHub <span aria-hidden="true">↗</span></a></p>
         </div>
         <div className="footer-group footer-explore">
           <h2>Explore</h2>
@@ -38,7 +38,7 @@ export function SiteFooter() {
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Elliot Preston</span>
-          <a href="#main">Back to top <span aria-hidden="true">↑</span></a>
+          <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
         </div>
       </footer>
   );

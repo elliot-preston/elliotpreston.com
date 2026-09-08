@@ -11,9 +11,11 @@
   border-top: 1px solid var(--rule);
 }
 
+.hero + .section { border-top: 0; }
+
 .photo { position: relative; overflow: hidden; aspect-ratio: 1.35; background: var(--photo); }
-.photo img { filter: brightness(0.65); }
-.peyotePhoto img { object-position: 50% 15%; }
+.peyotePhoto { aspect-ratio: 1.5; }
+.peyotePhoto img { object-position: center; filter: none; }
 .bladePhoto img { transform: translateY(-2%) scale(1.04); }
 .recordingPhoto { aspect-ratio: 1.65; }
 .recordingPhoto img { object-position: 50% 100%; }
@@ -30,14 +32,13 @@
 .reverse .photo { grid-column: 2; grid-row: 1; }
 .reverse .copy { grid-column: 1; grid-row: 1; }
 
-@media (min-width: 1024px) {
-  .hero { width: 94%; margin-inline: auto; }
-
+@media (max-width: 900px) {
+  .section { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-inline: 0; padding-block: 32px 40px; }
+  .reverse .photo, .reverse .copy { grid-column: auto; grid-row: auto; }
+  .copy h2 { margin-bottom: 20px; }
+  .photo, .copy { width: 100%; max-width: 650px; margin-inline: auto; }
 }
 
 @media (max-width: 700px) {
   :global(.publication.music-page) .hero :global(.hero-photo .photo-image) { object-position: 10% 3.5%; }
-  .section { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-inline: 0; padding-block: 32px 40px; }
-  .reverse .photo, .reverse .copy { grid-column: auto; grid-row: auto; }
-  .copy h2 { margin-bottom: 20px; }
 }

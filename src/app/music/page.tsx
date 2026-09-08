@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 function MusicPhoto({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
   return (
     <div className={`${styles.photo} ${className}`}>
-      <Image src={src} alt={alt} fill sizes="(max-width: 440px) calc(100vw - 44px), (max-width: 700px) 90vw, (max-width: 1600px) 42vw, 672px" className="photo-image" />
+      <Image src={src} alt={alt} fill sizes="(max-width: 440px) calc(100vw - 44px), (max-width: 900px) 90vw, (max-width: 1600px) 42vw, 672px" className="photo-image" />
     </div>
   );
 }
@@ -43,7 +43,7 @@ export default function Music() {
         </section>
 
         <section className={styles.section} aria-labelledby="peyote-title">
-          <MusicPhoto src="/music_intro.JPG" alt="Elliot Preston playing guitar in warm orange stage light." className={styles.peyotePhoto} />
+          <MusicPhoto src="/peyote-ugly-music-2.jpg" alt="Peyote Ugly performing live with guitar, bass, drums, and keyboards under red stage lights." className={styles.peyotePhoto} />
           <div className={styles.copy}>
             <h2 id="peyote-title">Peyote Ugly</h2>
             <p className="body-copy">I’ve been playing guitar and singing in Peyote Ugly since the band formed in 2015. We’ve spent the last decade writing, recording, and releasing music, while touring and playing shows around the Pacific Northwest, including supporting bands like Temples, Frankie and the Witch Fingers, and The Shivas.</p>
