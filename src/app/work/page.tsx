@@ -59,7 +59,7 @@ export default function Work() {
         <section className="editorial-section career-section" aria-labelledby="career-title">
           <div className="section-heading"><h2 id="career-title">Career Progression</h2></div>
           <div className="section-copy">
-            <p className="body-copy">I spent nearly 11 years at Pushpay, progressing across customer-facing roles, QA engineering, and technical leadership.</p>
+            <p className="body-copy">I spent nearly 11 years at Pushpay, progressing across customer-facing roles, QA engineering, and technical leadership. Selected roles are shown below.</p>
             <ol className="career-timeline">
               {career.map(([years, title, description]) => (
                 <li key={years}>
@@ -118,6 +118,7 @@ export default function Work() {
             <a className="section-link resume-document-link" href="/Elliot_Preston_Resume.pdf">
               <span className="resume-document-icon" aria-hidden="true" />
               <span>View Resume</span>
+              <span className="resume-arrow" aria-hidden="true">↗</span>
             </a>
           </div>
         </section>
