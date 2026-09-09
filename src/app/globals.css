@@ -270,6 +270,8 @@ h2 { font-weight: 400; }
 .resume-arrow { margin-left: auto; }
 @media (min-width: 1024px) {
   .hero { margin-inline: clamp(16px, 5.5vw, 80px); }
+  .home-page .hero-photo .photo-space,
+  .music-page .hero-photo .photo-space { aspect-ratio: 2.85; }
   .home-page .editorial-section { margin-inline: 3%; }
 }
 @media (min-width: 1280px) {
