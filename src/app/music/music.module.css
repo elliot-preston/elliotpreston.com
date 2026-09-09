@@ -1,5 +1,12 @@
 /* Share Home hero styling while retaining the Music photo’s focal point. */
 :global(.publication.music-page) .hero :global(.hero-photo .photo-image) { object-position: 30% 3.5%; filter: brightness(0.55); }
+.hero :global(.photo-space)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at bottom left, rgb(0 0 0 / 55%), rgb(0 0 0 / 25%) 40%, transparent 75%);
+  pointer-events: none;
+}
 
 .section {
   display: grid;
@@ -37,6 +44,11 @@
   .reverse .photo, .reverse .copy { grid-column: auto; grid-row: auto; }
   .copy h2 { margin-bottom: 20px; }
   .photo, .copy { width: 100%; max-width: 650px; margin-inline: auto; }
+  .band .copy { display: contents; }
+  .band .copy > * { width: 100%; max-width: 650px; margin-inline: auto; }
+  .band .copy h2 { grid-row: 1; margin-block: 0; }
+  .band .photo { grid-row: 2; }
+  .band .links { margin-top: 0; }
 }
 
 @media (max-width: 700px) {

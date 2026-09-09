@@ -1,3 +1,4 @@
+import { ExternalArrow } from "@/components/external-arrow";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
@@ -118,7 +119,7 @@ export default function Work() {
             <a className="section-link resume-document-link" href="/Elliot_Preston_Resume.pdf">
               <span className="resume-document-icon" aria-hidden="true" />
               <span>View Resume</span>
-              <span className="resume-arrow" aria-hidden="true">↗</span>
+              <ExternalArrow className="resume-arrow" />
             </a>
           </div>
         </section>

@@ -1,3 +1,4 @@
+import { ExternalArrow } from "@/components/external-arrow";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
@@ -8,10 +9,10 @@ export const metadata: Metadata = {
   description: "Music, bands, recording, mixing, and production from Elliot Preston.",
 };
 
-function MusicPhoto({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
+function MusicPhoto({ src, alt, className = "", loading = "lazy" }: { src: string; alt: string; className?: string; loading?: "eager" | "lazy" }) {
   return (
     <div className={`${styles.photo} ${className}`}>
-      <Image src={src} alt={alt} fill sizes="(max-width: 440px) calc(100vw - 44px), (max-width: 900px) 90vw, (max-width: 1600px) 42vw, 672px" className="photo-image" />
+      <Image src={src} alt={alt} fill loading={loading} sizes="(max-width: 440px) calc(100vw - 44px), (max-width: 900px) 90vw, (max-width: 1600px) 42vw, 672px" className="photo-image" />
     </div>
   );
 }
@@ -19,8 +20,8 @@ function MusicPhoto({ src, alt, className = "" }: { src: string; alt: string; cl
 function BandLinks({ listen, watch }: { listen: string; watch: string }) {
   return (
     <div className={styles.links}>
-      <a className="section-link primary-link" href={listen} target="_blank" rel="noopener noreferrer">Listen <span aria-hidden="true">↗</span></a>
-      <a className="section-link primary-link" href={watch} target="_blank" rel="noopener noreferrer">Watch <span aria-hidden="true">↗</span></a>
+      <a className="section-link primary-link" href={listen} target="_blank" rel="noopener noreferrer">Listen <ExternalArrow /></a>
+      <a className="section-link primary-link" href={watch} target="_blank" rel="noopener noreferrer">Watch <ExternalArrow /></a>
     </div>
   );
 }
@@ -34,6 +35,7 @@ export default function Music() {
         <section className={`hero ${styles.hero}`} aria-labelledby="hero-title">
           <div className="hero-heading">
             <h1 id="hero-title">Music</h1>
+            <p className="section-lead work-hero-line">I play guitar and drums, sing, and produce music.</p>
           </div>
           <figure className="photo hero-photo">
             <div className="photo-space">
@@ -42,8 +44,8 @@ export default function Music() {
           </figure>
         </section>
 
-        <section className={styles.section} aria-labelledby="peyote-title">
-          <MusicPhoto src="/peyote-ugly-music-2.jpg" alt="Peyote Ugly performing live with guitar, bass, drums, and keyboards under red stage lights." className={styles.peyotePhoto} />
+        <section className={`${styles.section} ${styles.band}`} aria-labelledby="peyote-title">
+          <MusicPhoto src="/peyote-ugly-music-2.jpg" alt="Peyote Ugly performing live with guitar, bass, drums, and keyboards under red stage lights." className={styles.peyotePhoto} loading="eager" />
           <div className={styles.copy}>
             <h2 id="peyote-title">Peyote Ugly</h2>
             <p className="body-copy">I’ve been playing guitar and singing in Peyote Ugly since the band formed in 2015. We’ve spent the last decade writing, recording, and releasing music, while touring and playing shows around the Pacific Northwest, including supporting bands like Temples, Frankie and the Witch Fingers, and The Shivas.</p>
@@ -51,7 +53,7 @@ export default function Music() {
           </div>
         </section>
 
-        <section className={`${styles.section} ${styles.reverse}`} aria-labelledby="blade-title">
+        <section className={`${styles.section} ${styles.band} ${styles.reverse}`} aria-labelledby="blade-title">
           <MusicPhoto src="/music_bladepalace.JPG" alt="Elliot Preston singing at the drums with Blade Palace under blue stage lights." className={styles.bladePhoto} />
           <div className={styles.copy}>
             <h2 id="blade-title">Blade Palace</h2>
