@@ -63,6 +63,11 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 }
 
 .photo-image { object-fit: cover; filter: brightness(0.9); }
+/* Selective reductions from the existing image brightness. */
+.home-page .hero-photo .photo-image { filter: brightness(0.6768); }
+.home-page .work-photo .photo-image { filter: brightness(0.70); }
+.home-page .music-section .photo-image { filter: brightness(0.65); }
+.work-page .approach-photo .photo-image { filter: brightness(0.72); }
 .music-photo .photo-image { object-position: 40% 50%; }
 .closing-photo .photo-image { object-position: 50% 75%; }
 .publication:not(.work-page) .work-section { margin-top: 22px; }

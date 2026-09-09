@@ -1,5 +1,5 @@
 /* Share Home hero styling while retaining the Music photo’s focal point. */
-:global(.publication.music-page) .hero :global(.hero-photo .photo-image) { object-position: 30% 3.5%; }
+:global(.publication.music-page) .hero :global(.hero-photo .photo-image) { object-position: 30% 3.5%; filter: brightness(0.55); }
 
 .section {
   display: grid;
@@ -15,10 +15,10 @@
 
 .photo { position: relative; overflow: hidden; aspect-ratio: 1.35; background: var(--photo); }
 .peyotePhoto { aspect-ratio: 1.5; }
-.peyotePhoto img { object-position: center; filter: none; }
-.bladePhoto img { transform: translateY(-2%) scale(1.04); }
+.peyotePhoto img { object-position: center; filter: brightness(0.74); }
+.bladePhoto img { transform: translateY(-2%) scale(1.04); filter: brightness(0.72); }
 .recordingPhoto { aspect-ratio: 1.65; }
-.recordingPhoto img { object-position: 50% 100%; }
+.recordingPhoto img { object-position: 50% 100%; filter: brightness(0.70); }
 .copy h2 { margin: 0 0 24px; font-size: clamp(30px, 3vw, 44px); line-height: 1.1; letter-spacing: -0.035em; }
 .links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
 .links :global(.primary-link) {
