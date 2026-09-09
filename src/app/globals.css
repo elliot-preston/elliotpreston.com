@@ -144,6 +144,7 @@ h2 { font-weight: 400; }
 .career-years { margin: 0 0 12px; color: var(--muted); font: 16px/1.6 var(--font-interface); }
 .work-page h3 { margin: 0 0 4px; font-size: clamp(21px, 2vw, 26px); font-weight: 400; line-height: 1.2; letter-spacing: -0.025em; }
 .selected-work-list { margin-top: var(--work-content-gap); }
+.work-page .selected-work-list h3 { font-weight: 600; }
 .selected-work-list li { display: grid; grid-template-columns: 24% minmax(0, 1fr); gap: 3%; align-items: center; padding-block: 12px; }
 .selected-work-list li + li { border-top: 1px solid var(--rule); }
 .selected-work-list li:first-child { padding-top: 0; }
@@ -247,7 +248,7 @@ h2 { font-weight: 400; }
   .career-timeline li { display: block; }
   .career-timeline .career-years { margin-bottom: 6px; }
   .selected-work-list li { grid-template-columns: 1fr; gap: 12px; }
-  .work-marker { width: min(100%, 220px); }
+  .work-marker { width: min(100%, 220px); aspect-ratio: 3 / 2; }
   .site-header { flex-direction: column; align-items: flex-start; gap: 4px; padding-block: 20px 6px; }
   .wordmark { font-size: 24px; }
   .site-header nav { flex-wrap: wrap; column-gap: 24px; row-gap: 0; }
@@ -268,6 +269,7 @@ h2 { font-weight: 400; }
 .work-page .hero-photo .photo-image { object-position: 50% 42%; filter: brightness(0.65); }
 .work-hero-line { max-width: 34ch; margin: 14px 0 0; font-size: clamp(20px, 2.2vw, 30px); line-height: 1.2; }
 .resume-arrow { margin-left: auto; }
+.external-arrow { display: inline-block; flex-shrink: 0; vertical-align: -0.125em; }
 @media (min-width: 1024px) {
   .hero { margin-inline: clamp(16px, 5.5vw, 80px); }
   .hero-photo .photo-space { aspect-ratio: 2.85; }
