@@ -9,6 +9,13 @@ test('homepage loads successfully', async ({ page }) => {
 test('main navigation is visible', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page.getByRole('link', { name: /work/i })).toBeVisible();
-  await expect(page.getByRole('link', { name: /music/i })).toBeVisible();
+  const nav = page.getByRole('navigation', { name: 'Main navigation' });
+
+  await expect(
+    nav.getByRole('link', { name: 'Work', exact: true })
+  ).toBeVisible();
+
+  await expect(
+    nav.getByRole('link', { name: 'Music', exact: true })
+  ).toBeVisible();
 });
